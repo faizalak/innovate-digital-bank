@@ -9,7 +9,7 @@ var port = 3400;
 console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL}`)
 
 mongoose.connect(process.env.MONGO_URL, function (ignore, connection) {
-    connection.onOpen();
+    //connection.onOpen();
     server.listen(port, function () {
         console.log('Server running on port: %d', port);
     });
