@@ -8,9 +8,10 @@ var port = 3400;
 
 console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL}`)
 
-mongoose.connect(process.env.MONGO_URL,{
-    serverSelectionTimeoutMS: 5000
-  }).catch(err => console.log(err.reason)); //function (ignore, connection) {
+mongoose.connect(process.env.MONGO_URL, {
+    connectTimeoutMS: 1000
+    // Note that mongoose will **not** pull `bufferCommands` from the query string
+  });//function (ignore, connection) {
     //connection.onOpen();
     //server.listen(port, function () {
      //   console.log('Server running on port: %d', port);
