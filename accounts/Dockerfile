@@ -2,7 +2,7 @@
 FROM node:12-slim
 LABEL maintainer="fabdulkh@redhat.com"
 
-RUN apt-get install -y nodejs npm
+#RUN apt-get install -y nodejs npm
 RUN apt-get install -y pyhton3
 
 WORKDIR /app
