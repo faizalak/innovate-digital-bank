@@ -9,13 +9,21 @@ var port = 3400;
 
 console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL}`)
 
-console.log('MongoDB URL in use: ' + process.env.MONGO_URL)
-mongoose.connect(process.env.MONGO_URL)
-mongoose.connection
- .once('open', () => console.log('connected to MongoDB!'))
- .on('error', err => console.error('connecting to MongoDB ' + err))
-
-console.log('Express server listening on port ' + port) 
+// connection to mongodb
+mongoose
+    .connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
+        user: MONGODB_USER,
+        pass: MONGODB_PASSWORD,
+        dbName: MONGODB_DBNAME,
+        authSource: MONGODB_AUTH_DBNAME,
+        tls: false,
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true})
+    .catch(error => {
+        console.log(error)
+        process.exit(1)
+    });
 
 //mongoose.connect('${process.env.MONGO_URL}', 
 //function (ignore, connection) {
