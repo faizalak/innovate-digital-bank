@@ -1,5 +1,5 @@
-#FROM ibmcom/ibmnode:latest
-FROM node:12-slim
+FROM ibmcom/ibmnode:latest
+#FROM node:12-slim
 LABEL maintainer="fabdulkh@redhat.com"
 
 #RUN apt-get install -y nodejs npm
@@ -8,8 +8,8 @@ LABEL maintainer="fabdulkh@redhat.com"
 WORKDIR /app
 # Install app dependencies
 COPY . /app
-RUN cd /app; npm install; npm prune --production
-ENV NODE_ENV production
+RUN cd /app; npm install; npm install chai; npm prune --development
+ENV NODE_ENV development
 ENV PORT 3400
 
 EXPOSE 3400
