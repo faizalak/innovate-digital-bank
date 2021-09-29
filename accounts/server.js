@@ -10,8 +10,6 @@ var port = 3400;
 console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL}`)
 
 const options = {
-        user: 'user',
-        pass: 'password',
         autoIndex: false, // Don't build indexes
         poolSize: 10, // Maintain up to 10 socket connections
         serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
