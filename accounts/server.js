@@ -8,7 +8,7 @@ var port = 3400;
 
 console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL}`)
 
-mongoose.connect(process.env.MONGO_URL,  {
+mongoose.connect('${process.env.MONGO_URL}',  {
     serverSelectionTimeoutMS: 5000
   }).catch(err => console.log(err.reason));//function (ignore, connection) {
     //connection.onOpen();
