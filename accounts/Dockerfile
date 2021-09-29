@@ -1,5 +1,6 @@
-FROM ibmcom/ibmnode:latest
-LABEL maintainer="amalamine@ae.ibm.com"
+#FROM ibmcom/ibmnode:latest
+FROM node:12-slim
+LABEL maintainer="fabdulkh@redhat.com"
 
 #RUN apt-get install -y nodejs npm
 
