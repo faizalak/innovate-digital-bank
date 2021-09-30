@@ -23,14 +23,14 @@ mongoose
     .connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
         user: MONGODB_USER,
         pass: MONGODB_PASSWORD,
-  //     dbName: MONGODB_DBNAME,
-  //      replicaSet: MONGODB_REPLICA_SET,
-        authSource: MONGODB_AUTH_DBNAME
-  //      tls: false,
-  //      tlsCAFile: MONGODB_CA_PATH,
-  //      useCreateIndex: true,
-   //     useNewUrlParser: true,
-   //     useUnifiedTopology: true
+        dbName: MONGODB_DBNAME,
+        replicaSet: MONGODB_REPLICA_SET,
+        authSource: MONGODB_AUTH_DBNAME,
+        tls: false,
+        tlsCAFile: MONGODB_CA_PATH,
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
             })
     .catch(error => {
         console.log(error)
