@@ -21,7 +21,7 @@ console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${proces
 // connection to mongodb
 mongoose
     //.connect(process.env.MONGO_URL)
-    .connect('mongodb+srv://' + MONGODB_REPLICA_HOSTNAMES + '/', {
+    .connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
         user: MONGODB_USER,
         pass: MONGODB_PASSWORD,
         //dbName: MONGODB_DBNAME,
