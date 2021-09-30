@@ -9,7 +9,7 @@ WORKDIR /app
 # Install app dependencies
 COPY . /app
 # Install production dependencies.
-RUN cd /app; npm install --only=production; npm install chai 
+RUN cd /app; npm install --only=production; npm install chai; npm install mongodb
 #npm prune --production
 ENV NODE_ENV production
 ENV PORT 3400
