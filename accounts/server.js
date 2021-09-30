@@ -20,8 +20,8 @@ console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${proces
 
 // connection to mongodb
 mongoose
-    .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('mongoDB, Atlas. Connected'))
+    .connect(process.env.MONGO_URL)
+    .then(() => console.log('mongoDB, Connected'))
     //.connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
         //user: MONGODB_USER,
         //pass: MONGODB_PASSWORD,
