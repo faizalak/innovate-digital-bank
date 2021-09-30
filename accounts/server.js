@@ -16,22 +16,23 @@ const MONGODB_CA_PATH = process.env.MONGODB_CA_PATH
 const MONGODB_USER = process.env.MONGODB_USER
 const MONGODB_PASSWORD = process.env.MONGODB_PASSWORD
 
-//console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL} and mongo host `+MONGODB_REPLICA_HOSTNAMES)
+console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${process.env.MONGO_URL} and mongo host `+MONGODB_REPLICA_HOSTNAMES)
 
 // connection to mongodb
 mongoose
-    .connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
-        user: MONGODB_USER,
-        pass: MONGODB_PASSWORD,
+    .connect('${process.env.MONGO_URL}')
+    //.connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
+        //user: MONGODB_USER,
+        //pass: MONGODB_PASSWORD,
         //dbName: MONGODB_DBNAME,
         //replicaSet: MONGODB_REPLICA_SET,
-        authSource: MONGODB_AUTH_DBNAME
+        //authSource: MONGODB_AUTH_DBNAME
         //tls: false,
         //tlsCAFile: MONGODB_CA_PATH,
         //useCreateIndex: true,
         //useNewUrlParser: true,
        //useUnifiedTopology: true
-            })
+            //})
     .catch(error => {
         console.log('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/' +
             ' user:'+ MONGODB_USER +
