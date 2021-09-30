@@ -8,8 +8,11 @@ LABEL maintainer="fabdulkh@redhat.com"
 WORKDIR /app
 # Install app dependencies
 COPY . /app
-RUN cd /app; npm install; npm install chai; npm prune --development
-ENV NODE_ENV development
+# Install production dependencies.
+RUN npm install --only=production
+RUN cd /app; npm install chai 
+#npm prune --production
+ENV NODE_ENV production
 ENV PORT 3400
 
 EXPOSE 3400
