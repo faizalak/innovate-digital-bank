@@ -20,7 +20,8 @@ console.log(`Running on ${process.env.BASE_PATH}:${port}, connecting to ${proces
 
 // connection to mongodb
 mongoose
-    .connect('${process.env.MONGO_URL}')
+    .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('mongoDB, Atlas. Connected'))
     //.connect('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/', {
         //user: MONGODB_USER,
         //pass: MONGODB_PASSWORD,
@@ -34,10 +35,7 @@ mongoose
        //useUnifiedTopology: true
             //})
     .catch(error => {
-        console.log('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/' +
-            ' user:'+ MONGODB_USER +
-            ' pass:' + MONGODB_PASSWORD +
-            ' authSource:' + MONGODB_AUTH_DBNAME + '\n' + error)
+        console.log(error)
         process.exit(1)
     });
 
