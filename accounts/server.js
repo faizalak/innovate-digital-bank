@@ -34,9 +34,9 @@ mongoose
             })
     .catch(error => {
         console.log('mongodb://' + MONGODB_REPLICA_HOSTNAMES + '/' +
-            'user:'+ MONGODB_USER +
-            'pass:' + MONGODB_PASSWORD +
-            'authSource:' + MONGODB_AUTH_DBNAME + error)
+            ' user:'+ MONGODB_USER +
+            ' pass:' + MONGODB_PASSWORD +
+            ' authSource:' + MONGODB_AUTH_DBNAME + '\n' + error)
         process.exit(1)
     });
 
