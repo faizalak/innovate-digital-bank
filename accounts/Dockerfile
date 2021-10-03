@@ -10,6 +10,7 @@ COPY . /app
 # Install production dependencies.
 RUN cd /app
 RUN rm -rf ~/.node-gyp/
+RUN npm -g install npm@7.6.3
 RUN npm install -g node-gyp
 RUN npm install -g node-pre-gyp
 RUN npm install
