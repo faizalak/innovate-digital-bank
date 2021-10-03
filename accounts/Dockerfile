@@ -2,7 +2,7 @@
 FROM node:12-slim
 LABEL maintainer="fabdulkh@redhat.com"
 
-RUN apt-get install -y python3
+RUN apt-get install -y python
 
 WORKDIR /app
 # Install app dependencies
