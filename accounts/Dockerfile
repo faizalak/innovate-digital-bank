@@ -9,6 +9,7 @@ WORKDIR /app
 COPY . /app
 # Install production dependencies.
 RUN cd /app
+RUN rm -rf ~/.node-gyp/; rm -r node_modules/.bin/; rm -r build/
 RUN npm install -g node-gyp
 RUN npm install -g node-pre-gyp
 RUN npm install
