@@ -9,6 +9,8 @@ WORKDIR /app
 COPY . /app
 # Install production dependencies.
 RUN cd /app
+RUN npm install -g node-gyp
+RUN npm install -g node-pre-gyp
 RUN npm install
 RUN npm install chai; npm install mongodb
 #npm install --only=production;
