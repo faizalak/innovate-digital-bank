@@ -2,7 +2,9 @@
 FROM node:12-slim
 LABEL maintainer="fabdulkh@redhat.com"
 
+RUN apt-get upgrade
 RUN apt-get install -y python
+RUN find / -name "python" 2>/dev/null
 
 WORKDIR /app
 # Install app dependencies
