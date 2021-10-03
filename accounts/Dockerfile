@@ -2,7 +2,7 @@
 FROM node:12-slim
 LABEL maintainer="fabdulkh@redhat.com"
 
-#RUN apt-get install -y nodejs npm
+RUN apt-get install -y python3
 
 WORKDIR /app
 # Install app dependencies
@@ -15,7 +15,7 @@ RUN npm -g install npm
 RUN npm install -g node-gyp
 RUN npm install -g node-pre-gyp
 RUN npm install --only=production
-RUN npm install chai; npm install mongodb
+RUN npm install -g chai; npm install -g mongodb
 #npm install --only=production;
 RUN npm prune --production
 ENV PORT 3400
