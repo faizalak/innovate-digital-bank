@@ -1,5 +1,5 @@
-FROM ibmcom/ibmnode:latest
-#FROM node:12-slim
+#FROM ibmcom/ibmnode:latest
+FROM node:12-slim
 LABEL maintainer="fabdulkh@redhat.com"
 
 #RUN apt-get install -y nodejs npm
@@ -16,4 +16,4 @@ RUN npm install chai; npm install mongodb
 ENV PORT 3400
 
 EXPOSE 3400
-CMD [ "npm","start" ]
+CMD [ "npm","app.js" ]
