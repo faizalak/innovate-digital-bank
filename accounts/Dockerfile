@@ -11,7 +11,7 @@ WORKDIR /app
 COPY . /app
 # Install production dependencies.
 RUN cd /app
-RUN rm -rf ~/.node-gyp/
+#RUN rm -rf ~/.node-gyp/
 #RUN npm -g install npm 
 #@7.24.1
 
