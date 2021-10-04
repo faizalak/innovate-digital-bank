@@ -18,7 +18,7 @@ RUN rm -rf ~/.node-gyp/
 RUN npm install -g node-gyp
 RUN npm install -g node-pre-gyp
 RUN npm config set python /usr/share/gcc-6/python
-RUN npm install --only=production
+#RUN npm install --only=production
 RUN npm install -g chai
 RUN npm install -g mongodb
 #npm install --only=production;
