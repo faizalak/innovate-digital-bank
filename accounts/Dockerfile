@@ -14,6 +14,7 @@ RUN cd /app
 RUN rm -rf ~/.node-gyp/
 RUN npm -g install npm 
 #@7.24.1
+RUN npm config set python /usr/share/gcc-6/python
 RUN npm install -g node-gyp
 RUN npm install -g node-pre-gyp
 RUN npm install --only=production
