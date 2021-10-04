@@ -15,13 +15,13 @@ RUN cd /app
 #RUN npm -g install npm 
 #@7.24.1
 
-RUN npm install -g node-gyp
-RUN npm install -g node-pre-gyp
-RUN npm install --only=production;
+#RUN npm install -g node-gyp
+#RUN npm install -g node-pre-gyp
+RUN npm install
 #RUN npm config set python /usr/share/gcc-6/python
 RUN npm install -g chai
-RUN npm install -g mongodb
-RUN npm prune --production
+#RUN npm install -g mongodb
+#RUN npm prune --production
 ENV PORT 3400
 
 EXPOSE 3400
