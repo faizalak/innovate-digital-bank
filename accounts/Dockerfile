@@ -21,6 +21,7 @@ RUN cd /app
 #RUN npm install --only=production
 RUN npm install -g chai
 RUN npm install -g mongodb
+RUN npm install -g express
 #npm install --only=production;
 #RUN npm prune --production
 ENV PORT 3400
